@@ -58,7 +58,6 @@ function ContextProvider({children}) {
             other: filterForCategory("другое"),
             all: records
         })
-        console.log(records)
     }, [records])
 
     // CONSTANTS
