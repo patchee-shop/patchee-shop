@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/patchee-shop/static/css/main.c147cda7.css",
-    "main.js": "/patchee-shop/static/js/main.67f551f9.js",
+    "main.js": "/patchee-shop/static/js/main.8a15fee0.js",
     "static/js/787.cfd8f164.chunk.js": "/patchee-shop/static/js/787.cfd8f164.chunk.js",
     "static/media/face.jpg": "/patchee-shop/static/media/face.f929f119bb1e7d9be2c4.jpg",
     "static/media/scrubs.jpg": "/patchee-shop/static/media/scrubs.4e64635e609acabaf9fa.jpg",
@@ -19,11 +19,11 @@
     "static/media/hands.jpg": "/patchee-shop/static/media/hands.ebf5906c37cc418c78fa.jpg",
     "index.html": "/patchee-shop/index.html",
     "main.c147cda7.css.map": "/patchee-shop/static/css/main.c147cda7.css.map",
-    "main.67f551f9.js.map": "/patchee-shop/static/js/main.67f551f9.js.map",
+    "main.8a15fee0.js.map": "/patchee-shop/static/js/main.8a15fee0.js.map",
     "787.cfd8f164.chunk.js.map": "/patchee-shop/static/js/787.cfd8f164.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c147cda7.css",
-    "static/js/main.67f551f9.js"
+    "static/js/main.8a15fee0.js"
   ]
 }
