@@ -11,10 +11,10 @@ function App() {
   return (
     <div className="app">
       <Routes>
-        <Route path="/" element={<Categories />} />
-        <Route exact path="/catalog/:filter" element={<Catalog />} />
-        <Route path="/product_info/:id" element={<ProductInfo />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path={process.env.PUBLIC_URL + "/"} element={<Categories />} />
+        <Route exact path={process.env.PUBLIC_URL + "/catalog/:filter"} element={<Catalog />} />
+        <Route path={process.env.PUBLIC_URL + "/product_info/:id"} element={<ProductInfo />} />
+        <Route path={process.env.PUBLIC_URL + "/cart"} element={<Cart />} />
       </Routes>
       <Tabs />
     </div>

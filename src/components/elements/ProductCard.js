@@ -37,7 +37,7 @@ export default function ProductCard({categoryName, view, ...props}) {
     return (
         <div className={`${view} ${isInCart} product-card`}>
             <div className='wrapper info-wrapper'>
-                <Link to={`/product_info/${props.record.id}`}>
+                <Link to={process.env.PUBLIC_URL + `/product_info/${props.record.id}`}>
                     <img src={productCardParams.picture}/>
                 </Link>
                 <div className='product-card--info wrapper'>

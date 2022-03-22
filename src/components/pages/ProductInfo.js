@@ -13,12 +13,12 @@ export default function ProductInfo() {
         <div className="section-view product-info">
             <div className="fix-wrapper">
                 <div className='back'>
-                <Link to={`/catalog/${currentCategory}`}>
+                <Link to={process.env.PUBLIC_URL + `/catalog/${currentCategory}`}>
                     <svg width="15.127" height="23.983" viewBox="0 0 15.127 23.983">
                         <path d="M18.141.857,6,13,17.841,24.84l2.985-2.985L11.969,13l9.158-9.158Z" transform="translate(-6 -0.857)" fillRule="evenodd"/>
                     </svg>
                 </Link>
-                <Link to={`/catalog/${currentCategory}`}>
+                <Link to={process.env.PUBLIC_URL + `/catalog/${currentCategory}`}>
                     <h3>Назад</h3>
                 </Link>
                 </div>
