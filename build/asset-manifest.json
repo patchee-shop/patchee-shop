@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.9c8c6802.css",
-    "main.js": "/static/js/main.67b5e4a4.js",
-    "static/js/787.cfd8f164.chunk.js": "/static/js/787.cfd8f164.chunk.js",
-    "static/media/face.jpg": "/static/media/face.f929f119bb1e7d9be2c4.jpg",
-    "static/media/scrubs.jpg": "/static/media/scrubs.4e64635e609acabaf9fa.jpg",
-    "static/media/eyemasks.jpg": "/static/media/eyemasks.75feed5705cf84587672.jpg",
-    "static/media/darkcircles.jpg": "/static/media/darkcircles.d5c6c8838fc8dc4f13f2.jpg",
-    "static/media/facemasks.jpg": "/static/media/facemasks.6c3edeb740b090bc0bb3.jpg",
-    "static/media/antiaging.jpg": "/static/media/antiaging.80176c7c2b01eed65228.jpg",
-    "static/media/acne.jpg": "/static/media/acne.5187ab7eff5889aa9176.jpg",
-    "static/media/moisture.jpg": "/static/media/moisture.49d387a1cad89790e4e9.jpg",
-    "static/media/body.jpg": "/static/media/body.4325d8edb199ebf2d45d.jpg",
-    "static/media/wrinkles.jpg": "/static/media/wrinkles.57a3f90f7a60a014c207.jpg",
-    "static/media/discounts.jpg": "/static/media/discounts.cf80686f4859d534c711.jpg",
-    "static/media/other.jpg": "/static/media/other.16f68ec81ada043c3574.jpg",
-    "static/media/hair.jpg": "/static/media/hair.9bb5a53ca964f36df282.jpg",
-    "static/media/hands.jpg": "/static/media/hands.ebf5906c37cc418c78fa.jpg",
-    "index.html": "/index.html",
-    "main.9c8c6802.css.map": "/static/css/main.9c8c6802.css.map",
-    "main.67b5e4a4.js.map": "/static/js/main.67b5e4a4.js.map",
-    "787.cfd8f164.chunk.js.map": "/static/js/787.cfd8f164.chunk.js.map"
+    "main.css": "/patchee-shop/static/css/main.c147cda7.css",
+    "main.js": "/patchee-shop/static/js/main.8a15fee0.js",
+    "static/js/787.cfd8f164.chunk.js": "/patchee-shop/static/js/787.cfd8f164.chunk.js",
+    "static/media/face.jpg": "/patchee-shop/static/media/face.f929f119bb1e7d9be2c4.jpg",
+    "static/media/scrubs.jpg": "/patchee-shop/static/media/scrubs.4e64635e609acabaf9fa.jpg",
+    "static/media/eyemasks.jpg": "/patchee-shop/static/media/eyemasks.75feed5705cf84587672.jpg",
+    "static/media/darkcircles.jpg": "/patchee-shop/static/media/darkcircles.d5c6c8838fc8dc4f13f2.jpg",
+    "static/media/facemasks.jpg": "/patchee-shop/static/media/facemasks.6c3edeb740b090bc0bb3.jpg",
+    "static/media/antiaging.jpg": "/patchee-shop/static/media/antiaging.80176c7c2b01eed65228.jpg",
+    "static/media/acne.jpg": "/patchee-shop/static/media/acne.5187ab7eff5889aa9176.jpg",
+    "static/media/moisture.jpg": "/patchee-shop/static/media/moisture.49d387a1cad89790e4e9.jpg",
+    "static/media/body.jpg": "/patchee-shop/static/media/body.4325d8edb199ebf2d45d.jpg",
+    "static/media/wrinkles.jpg": "/patchee-shop/static/media/wrinkles.57a3f90f7a60a014c207.jpg",
+    "static/media/discounts.jpg": "/patchee-shop/static/media/discounts.cf80686f4859d534c711.jpg",
+    "static/media/other.jpg": "/patchee-shop/static/media/other.16f68ec81ada043c3574.jpg",
+    "static/media/hair.jpg": "/patchee-shop/static/media/hair.9bb5a53ca964f36df282.jpg",
+    "static/media/hands.jpg": "/patchee-shop/static/media/hands.ebf5906c37cc418c78fa.jpg",
+    "index.html": "/patchee-shop/index.html",
+    "main.c147cda7.css.map": "/patchee-shop/static/css/main.c147cda7.css.map",
+    "main.8a15fee0.js.map": "/patchee-shop/static/js/main.8a15fee0.js.map",
+    "787.cfd8f164.chunk.js.map": "/patchee-shop/static/js/787.cfd8f164.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9c8c6802.css",
-    "static/js/main.67b5e4a4.js"
+    "static/css/main.c147cda7.css",
+    "static/js/main.8a15fee0.js"
   ]
 }
