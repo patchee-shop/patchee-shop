@@ -16,7 +16,7 @@ function ProductsInCart() {
         ))
 
     return (
-        <div className="products-in-cart">
+        <div className={`products-in-cart ${Object.keys(cartItems).length? "" : "hidden"}`}>
             {productsInCart}
         </div>
     );
