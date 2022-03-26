@@ -57,12 +57,6 @@ ul {
     z-index: 1000;
 }
 
-.categories-grid,
-.products-list,
-.text-information {
-    margin-bottom: 4.5rem;
-}
-
 .products-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
@@ -75,6 +69,7 @@ img,
 article,
 .counter--number,
 .product-card--price,
+.product-card--old-price,
 .add-to-card,
 .nav--tabs p {
     user-select: none;
@@ -174,6 +169,7 @@ article,
 .category-card {
     border-radius: 16px;
     background-size: cover;
+    background-position: center;
     text-decoration: none;
     font-weight: bold;
     display: flex;
@@ -215,56 +211,46 @@ article,
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)), url(./img/face.jpg);
     grid-area: fc;
-    background-position: -50%;
 }
 .category-card.wrinkles {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)), url(./img/wrinkles.jpg);
     grid-area: ws;
-    background-position: -50%;
 }
 .category-card.darkcircles {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)), url(./img/darkcircles.jpg);
     grid-area: dc;
-    background-position: -50%;
 }
 .category-card.hair {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)), url(./img/hair.jpg);
     grid-area: hr;
-    background-size: 200%;
-    background-position: 50%;
 }
 .category-card.moisture {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)), url(./img/moisture.jpg);
     grid-area: mt;
-    background-position: -50% -60%;
 }
 .category-card.eyemasks {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)), url(./img/eyemasks.jpg);
     grid-area: em;
-    background-position: -40%;
 }
 .category-card.acne {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)), url(./img/acne.jpg);
     grid-area: ac;
-    background-position: 30%;
 }
 .category-card.scrubs {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)), url(./img/scrubs.jpg);
     grid-area: ss;
-    background-position: -50%;
 }
 .category-card.other {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)), url(./img/other.jpg);
     grid-area: ot;
-    background-position: -50%;
 }
 .category-card.all {
     background-color: var(--background-color);
@@ -314,6 +300,10 @@ article,
     width: 6rem;
     display: grid;
     place-content: center;
+}
+
+.transparent {
+    opacity: .5;
 }
 
 /* COUNTER -- SMALL */
@@ -376,11 +366,42 @@ article,
     display: none;
 }
 
+/* PRODUCT CARD */
+
+.prices-wrapper {
+    display: grid;
+}
+
+.small.product-card .product-card--old-price,
+.big.product-card .product-card--old-price,
+.row.product-card .product-card--old-price {
+    font-size: .8rem;
+}
+
+.product-card--old-price {
+    position: relative;
+    width: fit-content;
+    color: rgba(110, 110, 110, 0.98);
+}
+  
+.product-card--old-price:before {
+    border-bottom: 1px solid rgb(255, 0, 93, 0.75);
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 50%;
+    transform: rotate(-12deg);
+}
+
 /* PRODUCT CARD -- SMALL */
 
 .small.product-card {
     display: grid;
     align-content: space-between;
+}
+
+.small.product-card .product-card--old-price {
+    font-size: .8rem;
 }
 
 .small.product-card img {
@@ -527,8 +548,12 @@ article,
 }
 
 .big.product-card .product-card--price {
-    margin: .5em 0em;
+    margin: .5em 0em .4em;
     font-size: 1.3rem;
+}
+
+.big.product-card .product-card--old-price {
+    margin-bottom: 1em;
 }
 
 /* PRODUCT INFO */
@@ -620,8 +645,12 @@ article,
 
 .row.product-card .product-card--price {
     font-size: 1rem;
-    width: 4rem;
+}
+
+.row.product-card .product-card--price,
+.row.product-card .product-card--old-price {
     text-align: center;
+    justify-self: center;
 }
 
 .cart--summary {
@@ -733,12 +762,6 @@ article,
     .categories-grid {
         height: 70rem;
     }
-    .category-card.moisture {
-        background-position: -50% -110%;
-    }
-    .category-card.face {
-        background-position: 0%;
-    }
 }
 
 /* TABLETS / LAPTOPS */
@@ -754,25 +777,6 @@ article,
             'hs bd bd bd dc dc ot al'
         ;
     }
-    .category-card.antiaging {
-        background-position: 0;
-    }
-    .category-card.darkcircles {
-        background-position: 0;
-    }
-    .category-card.moisture {
-        background-position: 0;
-    }
-    .category-card.face {
-        background-position: 0;
-    }
-    .category-card.other {
-        background-position: 0;
-    }
-    .category-card.hands {
-        background-position: 50%;
-    }
-
     .product-info {
         display: grid;
     }
@@ -799,12 +803,5 @@ article,
     }
     .row.product-card {
         justify-content: unset;
-    }
-}
-
-/* BIG DISPLAYS */
-@media (min-width: 768px) {
-    .category-card.hands {
-        background-position: 0;
     }
 }

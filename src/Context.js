@@ -34,7 +34,7 @@ function ContextProvider({children}) {
       )))
     }
     const filterForCategory = (tag) => {
-        return additionalFilterTyping(records.filter(record => record.fields.Тэги.includes(tag)))
+        return additionalFilterTyping(records.filter(record => record.fields.Категории.includes(tag)))
     }
     const filterTyping = () => {
         return (records.filter(record => (
@@ -43,20 +43,20 @@ function ContextProvider({children}) {
     }
     useEffect(() => {
         setFilteredRecords({
-            antiaging: filterForCategory("антивозрастное"),
-            discounts: filterForCategory("скидки"),
-            facemasks: filterForCategory("тканевые маски"),
-            hands: filterForCategory("руки"),
-            body: filterForCategory("тело"),
-            face: [...filterForCategory("лицо"), ...filterForCategory("под глаза"), ...filterForCategory("вокруг глаз")],
-            wrinkles: filterForCategory("морщины"),
-            darkcircles: filterForCategory("тёмные круги"),
-            hair: filterForCategory("для волос"),
-            moisture: filterForCategory("увлажнение"),
-            eyemasks: filterForCategory("патчи"),
-            acne: filterForCategory("акне"),
-            scrubs: filterForCategory("скрабы"),
-            other: filterForCategory("другое"),
+            antiaging: filterForCategory("Антивозрастная косметика"),
+            discounts: filterForCategory("Скидки"),
+            facemasks: filterForCategory("Тканевые маски"),
+            hands: filterForCategory("Пенки для лица"),
+            body: filterForCategory("Крема, гели и эмульсии"),
+            face: filterForCategory("Скрабы для лица и пилинг"),
+            wrinkles: filterForCategory("Сыворотки и эссенции"),
+            darkcircles: filterForCategory("Для кожи вокруг глаз"),
+            hair: filterForCategory("Для волос"),
+            moisture: filterForCategory("Крем-маски для лица"),
+            eyemasks: filterForCategory("Патчи"),
+            acne: filterForCategory("От акне, прыщей и чёрных точек"),
+            scrubs: filterForCategory("Скрабы для тела"),
+            other: filterForCategory("Другое"),
             all: records
         })
     }, [records])
@@ -75,7 +75,7 @@ function ContextProvider({children}) {
             .then(res => res.json())
             .then(data => (setRecords(data.records)))
     }, [])
-    const insertNewOrder = (itemId, quantity, orderId, userPhone, userName) =>
+    const insertNewOrder = (itemId, quantity, orderId, userPhone, userName, discount) =>
         fetch(ordersListBaseUrl, {
             method: 'POST',
             headers: {
@@ -86,7 +86,7 @@ function ContextProvider({children}) {
             `{ 
                 "fields": {
                     "Номер заказа": "${orderId}",
-                    "Скидка": 0,
+                    "Скидка": ${discount},
                     "Товар": [
                         "${itemId}"
                     ],
@@ -106,20 +106,20 @@ function ContextProvider({children}) {
     }
     useEffect(() => {
         setFilteredRecords({
-            antiaging: filterForCategory("антивозрастное"),
-            discounts: filterForCategory("скидки"),
-            facemasks: filterForCategory("тканевые маски"),
-            hands: filterForCategory("руки"),
-            body: filterForCategory("тело"),
-            face: [...filterForCategory("лицо"), ...filterForCategory("под глаза"), ...filterForCategory("вокруг глаз")],
-            wrinkles: filterForCategory("морщины"),
-            darkcircles: filterForCategory("тёмные круги"),
-            hair: filterForCategory("для волос"),
-            moisture: filterForCategory("увлажнение"),
-            eyemasks: filterForCategory("патчи"),
-            acne: filterForCategory("акне"),
-            scrubs: filterForCategory("скрабы"),
-            other: filterForCategory("другое"),
+            antiaging: filterForCategory("Антивозрастная косметика"),
+            discounts: filterForCategory("Скидки"),
+            facemasks: filterForCategory("Тканевые маски"),
+            hands: filterForCategory("Пенки для лица"),
+            body: filterForCategory("Крема, гели и эмульсии"),
+            face: filterForCategory("Скрабы для лица и пилинг"),
+            wrinkles: filterForCategory("Сыворотки и эссенции"),
+            darkcircles: filterForCategory("Для кожи вокруг глаз"),
+            hair: filterForCategory("Для волос"),
+            moisture: filterForCategory("Крем-маски для лица"),
+            eyemasks: filterForCategory("Патчи"),
+            acne: filterForCategory("От акне, прыщей и чёрных точек"),
+            scrubs: filterForCategory("Скрабы для тела"),
+            other: filterForCategory("Другое"),
             all: filterTyping()
         })
     }, [searcherValue])

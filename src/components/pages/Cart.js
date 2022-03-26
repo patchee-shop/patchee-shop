@@ -21,12 +21,22 @@ export default function Cart() {
     const sum = records.length != 0? (Object.keys(cartItems).length?
         Object.entries(cartItems).map(([key, value]) => (
             Object.keys(records.filter(r => r.id === key)[0].fields).length?
-                records.filter(r => r.id === key)[0].fields.Цена * value : 0
+                (
+                    value >= records.filter(r => r.id === key)[0].fields.ТриггерКоличество?
+                    records.filter(r => r.id === key)[0].fields.ТриггерЦена :
+                    records.filter(r => r.id === key)[0].fields.Цена
+                ) * value : 0
         )).reduce((a, b) => a + b) : 0) : 0
 
     const conveyAllCartItems = (cartItems, orderId, userPhone, userName) => {
         Object.entries(cartItems).map(([key, value]) => (
-            insertNewOrder(key, value, orderId, userPhone, userName)
+            insertNewOrder(key, value, orderId, userPhone, userName, (
+                Math.floor((1 - ((
+                value >= records.filter(r => r.id === key)[0].fields.ТриггерКоличество?
+                records.filter(r => r.id === key)[0].fields.ТриггерЦена :
+                records.filter(r => r.id === key)[0].fields.Цена
+                )/records.filter(r => r.id === key)[0].fields.Цена))*100)/100
+            ))
         ))
     }
 

@@ -11,7 +11,10 @@ export default function ProductCard({categoryName, view, ...props}) {
         name: props.record.fields.Название,
         addition: props.record.fields.Дополнение,
         price: props.record.fields.Цена,
-        id: props.record.id
+        id: props.record.id,
+        triggerPrice: props.record.fields.ТриггерЦена,
+        triggerQuantity: props.record.fields.ТриггерКоличество,
+        remains: props.record.fields.Осталось
     })
     const addFirstItem = () => {
         setCartItems(prev => (
@@ -66,23 +69,42 @@ export default function ProductCard({categoryName, view, ...props}) {
                                 </svg>
                             </button>
                         :
-                            <Counter recordId={productCardParams.id}/>
+                            <Counter
+                                recordId={productCardParams.id}
+                                remains={productCardParams.remains}
+                            />
                     :
                         !cartItems[productCardParams.id]?
                             <button onClick={addFirstItem} disabled={cartItems[productCardParams.id]} className='add-to-card'>Добавить в корзину</button>
                         :
                             <>
                             <button onClick={addFirstItem} disabled={cartItems[productCardParams.id]} className='add-to-card'>В корзине</button>
-                            <Counter recordId={productCardParams.id}/>
+                            <Counter
+                                recordId={productCardParams.id}
+                                remains={productCardParams.remains}
+                            />
                             </>
                     }
                 </div>
-                <p className='product-card--price'>
-                    { cartItems[productCardParams.id]?
-                        productCardParams.price * cartItems[productCardParams.id] :
-                        productCardParams.price
-                    } ₽
-                </p>
+                <div className='prices-wrapper'>
+                    <p className='product-card--price'>
+                        { cartItems[productCardParams.id]?
+                            (!cartItems[productCardParams.id]? 1 : cartItems[productCardParams.id]) >= productCardParams.triggerQuantity?
+                                productCardParams.triggerPrice * cartItems[productCardParams.id] :
+                                productCardParams.price * cartItems[productCardParams.id] :
+                                (!cartItems[productCardParams.id]? 1 : cartItems[productCardParams.id]) >= productCardParams.triggerQuantity?
+                                productCardParams.triggerPrice :
+                                productCardParams.price
+                        } ₽
+                    </p>
+                    {
+                        (!cartItems[productCardParams.id]? 1 : cartItems[productCardParams.id]) >= productCardParams.triggerQuantity
+                        &&
+                        <p className='product-card--old-price'>
+                            {productCardParams.price * (!cartItems[productCardParams.id]? 1 : cartItems[productCardParams.id])} ₽
+                        </p>
+                    }
+                </div>
             </div>
         </div>
     )

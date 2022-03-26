@@ -21,25 +21,25 @@ function Categories() {
                 <p>Тканевые маски</p>
             </Link>
             <Link className="category-card hands" to={process.env.PUBLIC_URL + "/catalog/hands"}>
-                <p>Руки</p>
+                <p>Пенки для лица</p>
             </Link>
             <Link className="category-card body" to={process.env.PUBLIC_URL + "/catalog/body"}>
-                <p>Тело</p>
+                <p>Крема, гели и эмульсии</p>
             </Link>
             <Link className="category-card face" to={process.env.PUBLIC_URL + "/catalog/face"}>
-                <p>Лицо</p>
+                <p>Скрабы для лица и пилинг</p>
             </Link>
             <Link className="category-card wrinkles" to={process.env.PUBLIC_URL + "/catalog/wrinkles"}>
-                <p>От морщин</p>
+                <p>Сыворотки и эссенции</p>
             </Link>
             <Link className="category-card darkcircles" to={process.env.PUBLIC_URL + "/catalog/darkcircles"}>
-                <p>От тёмных кругов</p>
+                <p>Для кожи вокруг глаз</p>
             </Link>
             <Link className="category-card hair" to={process.env.PUBLIC_URL + "/catalog/hair"}>
-                <p>Волосы</p>
+                <p>Для волос</p>
             </Link>
             <Link className="category-card moisture" to={process.env.PUBLIC_URL + "/catalog/moisture"}>
-                <p>Увлажнение</p>
+                <p>Крем-маски для лица</p>
             </Link>
             <Link className="category-card eyemasks" to={process.env.PUBLIC_URL + "/catalog/eyemasks"}>
                 <p>Патчи</p>
@@ -48,7 +48,7 @@ function Categories() {
                 <p>От акне, прыщей и чёрных точек</p>
             </Link>
             <Link className="category-card scrubs" to={process.env.PUBLIC_URL + "/catalog/scrubs"}>
-                <p>Скрабы</p>
+                <p>Скрабы для тела</p>
             </Link>
             <Link className="category-card other" to={process.env.PUBLIC_URL + "/catalog/other"}>
                 <p>Другое</p>
