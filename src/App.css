@@ -529,7 +529,7 @@ article,
 .big.product-card .add-to-card {
     width: 70%;
     margin: .5em 0;
-    height: 43px;
+    height: 3rem;
 }
 
 .big.product-card .add-to-card:disabled {
