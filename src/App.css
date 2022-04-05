@@ -79,6 +79,11 @@ article,
     -webkit-user-select: none;
 }
 
+.back a {
+    display: grid;
+    place-items: center;
+}
+
 /* NAV (TABS) */
 
 .nav {
@@ -757,8 +762,15 @@ article,
 
 /* ADAPTATION */
 
-/* PHONES */ 
-@media (max-width: 420px) {
+/* SMALL PHONES */ 
+@media (max-width: 389px) {
+    :root {
+        font-size: 12px;
+    }
+}
+
+/* MEDIUM PHONES */ 
+@media (max-width: 413px) {
     .categories-grid {
         height: 70rem;
     }
