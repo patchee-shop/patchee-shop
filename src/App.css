@@ -20,6 +20,7 @@ body,
 
 body {
     background-color: var(--background-color);
+    background-color: black;
 }
 
 h1, h2, h3, p, span, a {
