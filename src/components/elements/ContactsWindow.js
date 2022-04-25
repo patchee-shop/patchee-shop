@@ -1,5 +1,7 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { Context } from "../../Context"
+import PostGenerator from "./PostGenerator"
+import html2canvas from "html2canvas"
 
 export default function ContactsWindow({requestOrder}) {
 
@@ -16,9 +18,35 @@ export default function ContactsWindow({requestOrder}) {
 
     const handlePhone = (event) => setUserPhone((event.target.value))
     const handleName = (event) => setUserName((event.target.value))
+    const [display, setDisplay] = useState("none")
+
+    const generatePost = () => {
+        html2canvas(document.querySelector('.post-generator'), {allowTaint: true,
+            useCORS: true}).then((canvas) => {
+            saveAs(canvas.toDataURL(), `${userName}.png`);
+        });
+    }
+    
+    function saveAs(uri, filename) {
+        const link = document.createElement('a');
+        if (typeof link.download === 'string') {
+            link.href = uri;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } else {
+            window.open(uri);
+        }
+    }
 
     return (
         <div className={`contacts-window ${isContactsWindowShown}`}>
+            <PostGenerator
+                userPhone={userPhone}
+                userName={userName}
+                display={display}
+            />
             <p className={`${leftEmptyPhone}`}>Номер телефона для связи</p>
                 <input
                     className="userPhone"
@@ -40,11 +68,15 @@ export default function ContactsWindow({requestOrder}) {
                 />
             <div className="wrapper">
                 <button
+                    id="download"
                     className="send"
                     onClick={
-                        () => userPhone.length >= 10?
-                        requestOrder() :
-                        setLeftEmptyPhone("empty")
+                        () =>
+                        !userPhone.includes("://")?
+                            userPhone.length >= 10?
+                            requestOrder() :
+                            setLeftEmptyPhone("empty")
+                        : generatePost()
                     }
                 >
                     Сделать заказ
