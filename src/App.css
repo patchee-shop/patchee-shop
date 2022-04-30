@@ -8,6 +8,11 @@
     font-size: 16px;
 }
 
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('fonts/HelveticaNeueCondensedBlack.ttf');
+}
+
 * {
     box-sizing: border-box;
 }
@@ -63,7 +68,9 @@ ul {
 
 .post-label {
     position: absolute;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'HelveticaNeue';
+    letter-spacing: .06rem;
+    line-height: 1;
     font-size: 42px;
     color: white;
     text-align: start;

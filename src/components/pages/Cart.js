@@ -65,7 +65,11 @@ export default function Cart() {
 
     return (
         <div className="section-view cart">
-            <ContactsWindow requestOrder={requestOrder}/>
+            <ContactsWindow
+                requestOrder={requestOrder}
+                cartItems={cartItems}
+                records={records}
+            />
             <div className="fix-wrapper">
                 <h1 className='section-title'>Корзина</h1>
             </div>

@@ -1,9 +1,9 @@
-import { useContext, useState } from "react"
+import { useContext, useState, useEffect } from "react"
 import { Context } from "../../Context"
 import PostGenerator from "./PostGenerator"
 import html2canvas from "html2canvas"
 
-export default function ContactsWindow({requestOrder}) {
+export default function ContactsWindow({requestOrder, cartItems, records}) {
 
     const {
         userPhone,
@@ -18,7 +18,17 @@ export default function ContactsWindow({requestOrder}) {
 
     const handlePhone = (event) => setUserPhone((event.target.value))
     const handleName = (event) => setUserName((event.target.value))
-    const [display, setDisplay] = useState("none")
+    const [pictures, setPictures] = useState([])
+
+    useEffect(() => {
+        setPictures(
+            Object.entries(cartItems).map(([key, value]) => (
+                (Object.keys(cartItems).length && records.length)?
+                (records).filter(r => r.id === key)[0].fields.Фото[0].url
+                : []
+            ))
+        )
+    }, [cartItems])
 
     const generatePost = () => {
         html2canvas(document.querySelector('.post-generator'), {allowTaint: true,
@@ -40,12 +50,14 @@ export default function ContactsWindow({requestOrder}) {
         }
     }
 
+    
+
     return (
         <div className={`contacts-window ${isContactsWindowShown}`}>
             <PostGenerator
                 userPhone={userPhone}
                 userName={userName}
-                display={display}
+                pictures={pictures}
             />
             <p className={`${leftEmptyPhone}`}>Номер телефона для связи</p>
                 <input
@@ -72,7 +84,7 @@ export default function ContactsWindow({requestOrder}) {
                     className="send"
                     onClick={
                         () =>
-                        !userPhone.includes("://")?
+                        !(userPhone.includes("://") || userPhone.includes("?arina"))?
                             userPhone.length >= 10?
                             requestOrder() :
                             setLeftEmptyPhone("empty")

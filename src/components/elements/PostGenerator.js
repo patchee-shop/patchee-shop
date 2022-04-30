@@ -1,10 +1,14 @@
-export default function PostGenerator({userPhone, userName}) {
+export default function PostGenerator({userPhone, userName, pictures}) {
     return (
         <div
             className="post-generator"
             style={{
-                backgroundImage: `url(${userPhone})`,
-                display: `${userPhone.includes("://")? "grid" : "none"}`
+                backgroundImage: `url(${
+                    (userPhone.includes("://") ? userPhone : pictures[0])
+                })`,
+                display: `${
+                    (userPhone.includes("://") || userPhone.includes("?arina"))? "grid" : "none"
+                }`
             }}
         >
             <div className="post-background"></div>

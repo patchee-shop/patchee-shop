@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.45fa6ada.css",
-    "main.js": "/static/js/main.b5a357c1.js",
+    "main.css": "/static/css/main.50128edc.css",
+    "main.js": "/static/js/main.f69985bf.js",
     "static/js/787.cfd8f164.chunk.js": "/static/js/787.cfd8f164.chunk.js",
     "static/media/face.jpg": "/static/media/face.79fa9df373c7713410b8.jpg",
     "static/media/hands.jpg": "/static/media/hands.5fac7c212456e77735dc.jpg",
@@ -11,6 +11,7 @@
     "static/media/moisture.jpg": "/static/media/moisture.0184163a6fe3a8e02b5e.jpg",
     "static/media/acne.jpg": "/static/media/acne.8c0bbcb3ec07454c3d4c.jpg",
     "static/media/facemasks.jpg": "/static/media/facemasks.c4c03cf0d20bd583cfdf.jpg",
+    "static/media/HelveticaNeueCondensedBlack.ttf": "/static/media/HelveticaNeueCondensedBlack.a5f22a0bb1b684d47980.ttf",
     "static/media/body.jpg": "/static/media/body.e96805611347f0296fee.jpg",
     "static/media/other.jpg": "/static/media/other.654be87775264bf65ae1.jpg",
     "static/media/discounts.jpg": "/static/media/discounts.cf80686f4859d534c711.jpg",
@@ -18,12 +19,12 @@
     "static/media/hair.jpg": "/static/media/hair.ac458b32c7630ac81bd8.jpg",
     "static/media/scrubs.jpg": "/static/media/scrubs.96491fb54f6d91a82056.jpg",
     "index.html": "/index.html",
-    "main.45fa6ada.css.map": "/static/css/main.45fa6ada.css.map",
-    "main.b5a357c1.js.map": "/static/js/main.b5a357c1.js.map",
+    "main.50128edc.css.map": "/static/css/main.50128edc.css.map",
+    "main.f69985bf.js.map": "/static/js/main.f69985bf.js.map",
     "787.cfd8f164.chunk.js.map": "/static/js/787.cfd8f164.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.45fa6ada.css",
-    "static/js/main.b5a357c1.js"
+    "static/css/main.50128edc.css",
+    "static/js/main.f69985bf.js"
   ]
 }
