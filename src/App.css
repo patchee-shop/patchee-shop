@@ -815,6 +815,18 @@ article,
     .categories-grid {
         height: 70rem;
     }
+    .section-view {
+        padding: 0em 2em 5rem;
+    }
+    .nav {
+        min-height: 5rem;
+    }
+    .products-in-cart {
+        height: calc(100vh - 5rem * 2 - 5.75rem - .4em * 2);
+    }
+    .cart--summary {
+        bottom: 5rem;
+    }
 }
 
 /* TABLETS / LAPTOPS */
